@@ -1,0 +1,89 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('proveedores').insertMany([
+  {
+    "_id": "PROV001",
+    "nombre": "Distribuidora Alimentos CR",
+    "servicio": "Alimentos",
+    "telefono": "+506 2222-1111",
+    "correo": "contacto@alimentoscr.com"
+  },
+  {
+    "_id": "PROV002",
+    "nombre": "Limpieza Total S.A.",
+    "servicio": "Limpieza",
+    "telefono": "+506 2233-2222",
+    "correo": "info@limpiezatotal.com"
+  },
+  {
+    "_id": "PROV003",
+    "nombre": "Mantenimiento Integral CR",
+    "servicio": "Mantenimiento",
+    "telefono": "+506 2244-3333",
+    "correo": "soporte@mantenimientocr.com"
+  },
+  {
+    "_id": "PROV004",
+    "nombre": "Tours Aventura Costa Rica",
+    "servicio": "Tours",
+    "telefono": "+506 2255-4444",
+    "correo": "reservas@aventuracr.com"
+  },
+  {
+    "_id": "PROV005",
+    "nombre": "Tecnología Hotelera CR",
+    "servicio": "Tecnología",
+    "telefono": "+506 2266-5555",
+    "correo": "ventas@techhotelcr.com"
+  },
+  {
+    "_id": "PROV006",
+    "nombre": "Bebidas Premium CR",
+    "servicio": "Alimentos",
+    "telefono": "+506 2277-6666",
+    "correo": "ventas@bebidascr.com"
+  },
+  {
+    "_id": "PROV007",
+    "nombre": "Servicios Eléctricos CR",
+    "servicio": "Mantenimiento",
+    "telefono": "+506 2288-7777",
+    "correo": "contacto@electricoscr.com"
+  },
+  {
+    "_id": "PROV008",
+    "nombre": "Lavandería Express",
+    "servicio": "Limpieza",
+    "telefono": "+506 2299-8888",
+    "correo": "info@lavanderiaexpress.com"
+  },
+  {
+    "_id": "PROV009",
+    "nombre": "Transporte Turístico CR",
+    "servicio": "Transporte",
+    "telefono": "+506 2300-9999",
+    "correo": "reservas@transporteturistico.com"
+  },
+  {
+    "_id": "PROV010",
+    "nombre": "Decoraciones Eventos CR",
+    "servicio": "Eventos",
+    "telefono": "+506 2311-0000",
+    "correo": "ventas@decoracionescr.com"
+  },
+  {
+    "_id": "PROV011",
+    "nombre": "Seguridad Privada CR",
+    "servicio": "Seguridad",
+    "telefono": "+506 2322-1111",
+    "correo": "info@seguridadcr.com"
+  },
+  {
+    "_id": "PROV012",
+    "nombre": "Software Hotelero CR",
+    "servicio": "Tecnología",
+    "telefono": "+506 2333-2222",
+    "correo": "soporte@softwarehotel.com"
+  }
+]);

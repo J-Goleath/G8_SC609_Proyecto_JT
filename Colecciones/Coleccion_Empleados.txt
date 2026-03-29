@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('empleados').insertMany([
+  {
+    "_id": "EMP001",
+    "nombre": "Luis Vargas",
+    "cargo": "Recepcionista",
+    "horario": "Mañana",
+    "contacto": "+506 88881111",
+    "sueldo": 900
+  },
+  {
+    "_id": "EMP002",
+    "nombre": "Ana Morales",
+    "cargo": "Recepcionista",
+    "horario": "Tarde",
+    "contacto": "+506 88882222",
+    "sueldo": 900
+  },
+  {
+    "_id": "EMP003",
+    "nombre": "Carlos Jiménez",
+    "cargo": "Gerente",
+    "horario": "Mixto",
+    "contacto": "+506 88883333",
+    "sueldo": 2500
+  },
+  {
+    "_id": "EMP004",
+    "nombre": "María Rodríguez",
+    "cargo": "Limpieza",
+    "horario": "Mañana",
+    "contacto": "+506 88884444",
+    "sueldo": 800
+  },
+  {
+    "_id": "EMP005",
+    "nombre": "José Hernández",
+    "cargo": "Mantenimiento",
+    "horario": "Tarde",
+    "contacto": "+506 88885555",
+    "sueldo": 850
+  },
+  {
+    "_id": "EMP006",
+    "nombre": "Laura Sánchez",
+    "cargo": "Atención al cliente",
+    "horario": "Mañana",
+    "contacto": "+506 88886666",
+    "sueldo": 950
+  },
+  {
+    "_id": "EMP007",
+    "nombre": "Pedro Castillo",
+    "cargo": "Seguridad",
+    "horario": "Noche",
+    "contacto": "+506 88887788",
+    "sueldo": 900
+  },
+  {
+    "_id": "EMP008",
+    "nombre": "Sofía Ramírez",
+    "cargo": "Spa",
+    "horario": "Tarde",
+    "contacto": "+506 88889999",
+    "sueldo": 1000
+  },
+  {
+    "_id": "EMP009",
+    "nombre": "Daniel Rojas",
+    "cargo": "Guía turístico",
+    "horario": "Mixto",
+    "contacto": "+506 87776666",
+    "sueldo": 1100
+  },
+  {
+    "_id": "EMP010",
+    "nombre": "Valeria Castro",
+    "cargo": "Restaurante",
+    "horario": "Tarde",
+    "contacto": "+506 86665555",
+    "sueldo": 950
+  },
+  {
+    "_id": "EMP011",
+    "nombre": "Miguel Torres",
+    "cargo": "Valet parking",
+    "horario": "Mañana",
+    "contacto": "+506 85554444",
+    "sueldo": 850
+  },
+  {
+    "_id": "EMP012",
+    "nombre": "Fernanda López",
+    "cargo": "Administración",
+    "horario": "Mixto",
+    "contacto": "+506 84443333",
+    "sueldo": 1800
+  }
+]);

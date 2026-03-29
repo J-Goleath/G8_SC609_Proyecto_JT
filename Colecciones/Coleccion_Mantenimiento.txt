@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('mantenimiento').insertMany([
+  {
+    "_id": "MANT001",
+    "area": "Habitación 101",
+    "descripcion": "Reparación de aire acondicionado",
+    "fecha": "2026-03-10",
+    "empleado_id": "EMP005",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT002",
+    "area": "Piscina",
+    "descripcion": "Limpieza y ajuste de químicos",
+    "fecha": "2026-03-12",
+    "empleado_id": "EMP005",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT003",
+    "area": "Lobby",
+    "descripcion": "Revisión de iluminación",
+    "fecha": "2026-03-15",
+    "empleado_id": "EMP005",
+    "estado": "en proceso"
+  },
+  {
+    "_id": "MANT004",
+    "area": "Habitación 202",
+    "descripcion": "Cambio de cerradura",
+    "fecha": "2026-03-18",
+    "empleado_id": "EMP005",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT005",
+    "area": "Restaurante",
+    "descripcion": "Mantenimiento de cocina industrial",
+    "fecha": "2026-03-20",
+    "empleado_id": "EMP005",
+    "estado": "pendiente"
+  },
+  {
+    "_id": "MANT006",
+    "area": "Spa",
+    "descripcion": "Revisión de jacuzzi",
+    "fecha": "2026-03-22",
+    "empleado_id": "EMP008",
+    "estado": "en proceso"
+  },
+  {
+    "_id": "MANT007",
+    "area": "Habitación 102",
+    "descripcion": "Reparación de ducha",
+    "fecha": "2026-03-25",
+    "empleado_id": "EMP005",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT008",
+    "area": "Parqueo",
+    "descripcion": "Pintura de señalización",
+    "fecha": "2026-03-27",
+    "empleado_id": "EMP005",
+    "estado": "pendiente"
+  },
+  {
+    "_id": "MANT009",
+    "area": "Área de eventos",
+    "descripcion": "Instalación de equipo de sonido",
+    "fecha": "2026-03-29",
+    "empleado_id": "EMP003",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT010",
+    "area": "Habitación 201",
+    "descripcion": "Revisión de televisión",
+    "fecha": "2026-04-01",
+    "empleado_id": "EMP005",
+    "estado": "en proceso"
+  },
+  {
+    "_id": "MANT011",
+    "area": "Jardines",
+    "descripcion": "Poda y mantenimiento general",
+    "fecha": "2026-04-03",
+    "empleado_id": "EMP011",
+    "estado": "finalizado"
+  },
+  {
+    "_id": "MANT012",
+    "area": "Recepción",
+    "descripcion": "Actualización de sistema informático",
+    "fecha": "2026-04-05",
+    "empleado_id": "EMP012",
+    "estado": "pendiente"
+  }
+]);

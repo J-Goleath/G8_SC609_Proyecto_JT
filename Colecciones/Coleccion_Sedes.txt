@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('sedes').insertMany([
+    {
+    "_id": "SED001",
+    "nombre": "Hotel Paraíso Central",
+    "direccion": "Avenida 2, Calle 5, San José Centro",
+    "ciudad": "San José",
+    "telefono": "+506 2222-3344",
+    "categoria": "4 estrellas"
+  },
+  {
+    "_id": "SED002",
+    "nombre": "Eco Lodge Monteverde",
+    "direccion": "Santa Elena, Monteverde",
+    "ciudad": "Puntarenas",
+    "telefono": "+506 2645-7788",
+    "categoria": "Boutique"
+  },
+  {
+    "_id": "SED003",
+    "nombre": "Resort Playa Dorada",
+    "direccion": "Playa Tamarindo, Guanacaste",
+    "ciudad": "Guanacaste",
+    "telefono": "+506 2653-9900",
+    "categoria": "5 estrellas"
+  },
+  {
+    "_id": "SED004",
+    "nombre": "Hotel Montaña Verde",
+    "direccion": "San Ramón, Alajuela",
+    "ciudad": "Alajuela",
+    "telefono": "+506 2445-6677",
+    "categoria": "3 estrellas"
+  },
+  {
+    "_id": "SED005",
+    "nombre": "Beach Hotel Caribe Azul",
+    "direccion": "Puerto Viejo, Limón",
+    "ciudad": "Limón",
+    "telefono": "+506 2750-8899",
+    "categoria": "Boutique"
+  },
+  {
+    "_id": "SED006",
+    "nombre": "Hotel Ejecutivo Escazú",
+    "direccion": "Escazú Centro, San José",
+    "ciudad": "San José",
+    "telefono": "+506 2288-4455",
+    "categoria": "4 estrellas"
+  },
+  {
+    "_id": "SED007",
+    "nombre": "Resort Volcán Arenal",
+    "direccion": "La Fortuna, San Carlos",
+    "ciudad": "Alajuela",
+    "telefono": "+506 2479-1122",
+    "categoria": "5 estrellas"
+  },
+  {
+    "_id": "SED008",
+    "nombre": "Hotel Pacífico Norte",
+    "direccion": "Playas del Coco, Guanacaste",
+    "ciudad": "Guanacaste",
+    "telefono": "+506 2670-5566",
+    "categoria": "4 estrellas"
+  },
+  {
+    "_id": "SED009",
+    "nombre": "Eco Hotel Selva Tropical",
+    "direccion": "Sarapiquí, Heredia",
+    "ciudad": "Heredia",
+    "telefono": "+506 2766-3344",
+    "categoria": "Ecológico"
+  },
+  {
+    "_id": "SED010",
+    "nombre": "Hotel Urbano Cartago",
+    "direccion": "Centro de Cartago",
+    "ciudad": "Cartago",
+    "telefono": "+506 2551-7788",
+    "categoria": "3 estrellas"
+  },
+  {
+    "_id": "SED011",
+    "nombre": "Resort Bahía Ballena",
+    "direccion": "Uvita, Puntarenas",
+    "ciudad": "Puntarenas",
+    "telefono": "+506 2786-9900",
+    "categoria": "5 estrellas"
+  },
+  {
+    "_id": "SED012",
+    "nombre": "Hotel Aeropuerto Alajuela",
+    "direccion": "Cerca del Aeropuerto Juan Santamaría",
+    "ciudad": "Alajuela",
+    "telefono": "+506 2430-2233",
+    "categoria": "4 estrellas"
+  }
+]);

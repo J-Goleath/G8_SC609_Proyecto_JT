@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('eventos').insertMany([
+  {
+    "_id": "EVT001",
+    "nombre": "Conferencia de Turismo Sostenible",
+    "fecha": "2026-04-10",
+    "sede_id": "SED001",
+    "capacidad": 100,
+    "tipo": "Conferencia"
+  },
+  {
+    "_id": "EVT002",
+    "nombre": "Boda García-López",
+    "fecha": "2026-05-15",
+    "sede_id": "SED001",
+    "capacidad": 80,
+    "tipo": "Boda"
+  },
+  {
+    "_id": "EVT003",
+    "nombre": "Seminario Empresarial",
+    "fecha": "2026-06-20",
+    "sede_id": "SED001",
+    "capacidad": 60,
+    "tipo": "Corporativo"
+  },
+  {
+    "_id": "EVT004",
+    "nombre": "Festival Cultural Caribeño",
+    "fecha": "2026-07-05",
+    "sede_id": "SED002",
+    "capacidad": 120,
+    "tipo": "Cultural"
+  },
+  {
+    "_id": "EVT005",
+    "nombre": "Retiro de Yoga",
+    "fecha": "2026-08-12",
+    "sede_id": "SED002",
+    "capacidad": 40,
+    "tipo": "Privado"
+  },
+  {
+    "_id": "EVT006",
+    "nombre": "Taller de Fotografía",
+    "fecha": "2026-09-18",
+    "sede_id": "SED002",
+    "capacidad": 30,
+    "tipo": "Cultural"
+  },
+  {
+    "_id": "EVT007",
+    "nombre": "Congreso Médico",
+    "fecha": "2026-10-10",
+    "sede_id": "SED003",
+    "capacidad": 150,
+    "tipo": "Conferencia"
+  },
+  {
+    "_id": "EVT008",
+    "nombre": "Boda Martínez-Rojas",
+    "fecha": "2026-11-22",
+    "sede_id": "SED003",
+    "capacidad": 100,
+    "tipo": "Boda"
+  },
+  {
+    "_id": "EVT009",
+    "nombre": "Convención Tecnológica",
+    "fecha": "2026-12-05",
+    "sede_id": "SED003",
+    "capacidad": 130,
+    "tipo": "Corporativo"
+  },
+  {
+    "_id": "EVT010",
+    "nombre": "Feria Gastronómica",
+    "fecha": "2026-03-30",
+    "sede_id": "SED001",
+    "capacidad": 90,
+    "tipo": "Cultural"
+  },
+  {
+    "_id": "EVT011",
+    "nombre": "Reunión Ejecutiva",
+    "fecha": "2026-04-25",
+    "sede_id": "SED002",
+    "capacidad": 25,
+    "tipo": "Corporativo"
+  },
+  {
+    "_id": "EVT012",
+    "nombre": "Fiesta de Fin de Año",
+    "fecha": "2026-12-31",
+    "sede_id": "SED003",
+    "capacidad": 200,
+    "tipo": "Privado"
+  }
+]);

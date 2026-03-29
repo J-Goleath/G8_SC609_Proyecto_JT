@@ -1,0 +1,89 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('servicios').insertMany([
+  {
+    "_id": "SERV001",
+    "nombre": "Desayuno buffet",
+    "costo": 15,
+    "descripcion": "Desayuno tipo buffet con opciones locales e internacionales",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV002",
+    "nombre": "Transporte aeropuerto",
+    "costo": 40,
+    "descripcion": "Servicio de traslado desde y hacia el aeropuerto",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV003",
+    "nombre": "Tour volcán Arenal",
+    "costo": 120,
+    "descripcion": "Excursión guiada al volcán Arenal con transporte incluido",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV004",
+    "nombre": "Acceso a spa",
+    "costo": 60,
+    "descripcion": "Acceso a sauna, jacuzzi y masajes relajantes",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV005",
+    "nombre": "Lavandería",
+    "costo": 25,
+    "descripcion": "Servicio de lavado y planchado de ropa",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV006",
+    "nombre": "Cena romántica",
+    "costo": 80,
+    "descripcion": "Cena privada para dos personas con decoración especial",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV007",
+    "nombre": "Alquiler de bicicletas",
+    "costo": 20,
+    "descripcion": "Renta de bicicletas para recorridos locales",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV008",
+    "nombre": "Tour canopy",
+    "costo": 100,
+    "descripcion": "Experiencia de canopy en bosque tropical",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV009",
+    "nombre": "Barra libre",
+    "costo": 50,
+    "descripcion": "Acceso ilimitado a bebidas durante el día",
+    "disponibilidad": false
+  },
+  {
+    "_id": "SERV010",
+    "nombre": "Clases de surf",
+    "costo": 90,
+    "descripcion": "Clases personalizadas de surf en playa cercana",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV011",
+    "nombre": "Parqueo privado",
+    "costo": 10,
+    "descripcion": "Espacio de estacionamiento dentro del hotel",
+    "disponibilidad": true
+  },
+  {
+    "_id": "SERV012",
+    "nombre": "Servicio a la habitación",
+    "costo": 30,
+    "descripcion": "Entrega de alimentos y bebidas a la habitación",
+    "disponibilidad": true
+  }
+]);

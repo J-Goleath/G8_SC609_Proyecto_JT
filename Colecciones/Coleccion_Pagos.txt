@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('pagos').insertMany([
+  {
+    "_id": "PAG001",
+    "reserva_id": "RES001",
+    "monto": 140,
+    "metodo": "Tarjeta de crédito",
+    "fecha": "2026-03-09",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG002",
+    "reserva_id": "RES002",
+    "monto": 330,
+    "metodo": "Transferencia bancaria",
+    "fecha": "2026-03-10",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG003",
+    "reserva_id": "RES003",
+    "monto": 360,
+    "metodo": "Tarjeta de débito",
+    "fecha": "2026-03-17",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG004",
+    "reserva_id": "RES004",
+    "monto": 780,
+    "metodo": "Tarjeta de crédito",
+    "fecha": "2026-03-19",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG005",
+    "reserva_id": "RES005",
+    "monto": 130,
+    "metodo": "Efectivo",
+    "fecha": "2026-03-13",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG006",
+    "reserva_id": "RES006",
+    "monto": 285,
+    "metodo": "Tarjeta de crédito",
+    "fecha": "2026-03-21",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG007",
+    "reserva_id": "RES007",
+    "monto": 510,
+    "metodo": "Transferencia bancaria",
+    "fecha": "2026-03-24",
+    "estado": "pendiente"
+  },
+  {
+    "_id": "PAG008",
+    "reserva_id": "RES008",
+    "monto": 720,
+    "metodo": "Tarjeta de débito",
+    "fecha": "2026-03-30",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG009",
+    "reserva_id": "RES009",
+    "monto": 160,
+    "metodo": "Efectivo",
+    "fecha": "2026-03-27",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG010",
+    "reserva_id": "RES010",
+    "monto": 260,
+    "metodo": "Tarjeta de crédito",
+    "fecha": "2026-04-04",
+    "estado": "reembolsado"
+  },
+  {
+    "_id": "PAG011",
+    "reserva_id": "RES011",
+    "monto": 600,
+    "metodo": "Transferencia bancaria",
+    "fecha": "2026-04-09",
+    "estado": "aprobado"
+  },
+  {
+    "_id": "PAG012",
+    "reserva_id": "RES012",
+    "monto": 900,
+    "metodo": "Tarjeta de débito",
+    "fecha": "2026-03-25",
+    "estado": "pendiente"
+  }
+]);

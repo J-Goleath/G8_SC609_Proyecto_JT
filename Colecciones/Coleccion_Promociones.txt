@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('promociones').insertMany([
+  {
+    "_id": "PROM001",
+    "nombre": "Descuento temporada baja",
+    "descripcion": "Descuento aplicado en meses de baja ocupación",
+    "porcentaje_descuento": 15,
+    "fecha_inicio": "2026-05-01",
+    "fecha_fin": "2026-06-30"
+  },
+  {
+    "_id": "PROM002",
+    "nombre": "Semana Santa",
+    "descripcion": "Promoción especial por vacaciones de Semana Santa",
+    "porcentaje_descuento": 10,
+    "fecha_inicio": "2026-04-01",
+    "fecha_fin": "2026-04-07"
+  },
+  {
+    "_id": "PROM003",
+    "nombre": "Estadía larga",
+    "descripcion": "Descuento por reservas mayores a 5 noches",
+    "porcentaje_descuento": 20,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM004",
+    "nombre": "Cliente frecuente",
+    "descripcion": "Beneficio para huéspedes recurrentes",
+    "porcentaje_descuento": 10,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM005",
+    "nombre": "Vacaciones de mitad de año",
+    "descripcion": "Promoción especial en julio",
+    "porcentaje_descuento": 12,
+    "fecha_inicio": "2026-07-01",
+    "fecha_fin": "2026-07-31"
+  },
+  {
+    "_id": "PROM006",
+    "nombre": "Fin de semana",
+    "descripcion": "Descuento en reservas de fin de semana",
+    "porcentaje_descuento": 8,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM007",
+    "nombre": "Navidad",
+    "descripcion": "Promoción especial de fin de año",
+    "porcentaje_descuento": 18,
+    "fecha_inicio": "2026-12-20",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM008",
+    "nombre": "Año Nuevo",
+    "descripcion": "Descuento para reservas de inicio de año",
+    "porcentaje_descuento": 15,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-01-10"
+  },
+  {
+    "_id": "PROM009",
+    "nombre": "Luna de miel",
+    "descripcion": "Paquete especial para parejas",
+    "porcentaje_descuento": 25,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM010",
+    "nombre": "Black Friday",
+    "descripcion": "Promoción especial de noviembre",
+    "porcentaje_descuento": 30,
+    "fecha_inicio": "2026-11-20",
+    "fecha_fin": "2026-11-30"
+  },
+  {
+    "_id": "PROM011",
+    "nombre": "Descuento corporativo",
+    "descripcion": "Tarifa especial para empresas",
+    "porcentaje_descuento": 12,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  },
+  {
+    "_id": "PROM012",
+    "nombre": "Reserva anticipada",
+    "descripcion": "Descuento por reservar con anticipación",
+    "porcentaje_descuento": 10,
+    "fecha_inicio": "2026-01-01",
+    "fecha_fin": "2026-12-31"
+  }
+]);

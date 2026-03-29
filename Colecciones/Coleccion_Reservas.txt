@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('reservas').insertMany([
+    {
+    "_id": "RES001",
+    "huesped_id": "HUESP001",
+    "habitacion_id": "HAB001",
+    "fecha_ingreso": "2026-03-10",
+    "fecha_salida": "2026-03-12",
+    "estado": "finalizada"
+  },
+  {
+    "_id": "RES002",
+    "huesped_id": "HUESP002",
+    "habitacion_id": "HAB002",
+    "fecha_ingreso": "2026-03-12",
+    "fecha_salida": "2026-03-15",
+    "estado": "confirmada"
+  },
+  {
+    "_id": "RES003",
+    "huesped_id": "HUESP003",
+    "habitacion_id": "HAB003",
+    "fecha_ingreso": "2026-03-18",
+    "fecha_salida": "2026-03-20",
+    "estado": "finalizada"
+  },
+  {
+    "_id": "RES004",
+    "huesped_id": "HUESP004",
+    "habitacion_id": "HAB004",
+    "fecha_ingreso": "2026-03-20",
+    "fecha_salida": "2026-03-23",
+    "estado": "confirmada"
+  },
+  {
+    "_id": "RES005",
+    "huesped_id": "HUESP005",
+    "habitacion_id": "HAB005",
+    "fecha_ingreso": "2026-03-14",
+    "fecha_salida": "2026-03-16",
+    "estado": "finalizada"
+  },
+  {
+    "_id": "RES006",
+    "huesped_id": "HUESP006",
+    "habitacion_id": "HAB006",
+    "fecha_ingreso": "2026-03-22",
+    "fecha_salida": "2026-03-25",
+    "estado": "confirmada"
+  },
+  {
+    "_id": "RES007",
+    "huesped_id": "HUESP007",
+    "habitacion_id": "HAB007",
+    "fecha_ingreso": "2026-03-25",
+    "fecha_salida": "2026-03-28",
+    "estado": "pendiente"
+  },
+  {
+    "_id": "RES008",
+    "huesped_id": "HUESP008",
+    "habitacion_id": "HAB008",
+    "fecha_ingreso": "2026-04-01",
+    "fecha_salida": "2026-04-04",
+    "estado": "confirmada"
+  },
+  {
+    "_id": "RES009",
+    "huesped_id": "HUESP009",
+    "habitacion_id": "HAB009",
+    "fecha_ingreso": "2026-03-28",
+    "fecha_salida": "2026-03-30",
+    "estado": "finalizada"
+  },
+  {
+    "_id": "RES010",
+    "huesped_id": "HUESP010",
+    "habitacion_id": "HAB010",
+    "fecha_ingreso": "2026-04-05",
+    "fecha_salida": "2026-04-07",
+    "estado": "cancelada"
+  },
+  {
+    "_id": "RES011",
+    "huesped_id": "HUESP011",
+    "habitacion_id": "HAB011",
+    "fecha_ingreso": "2026-04-10",
+    "fecha_salida": "2026-04-13",
+    "estado": "confirmada"
+  },
+  {
+    "_id": "RES012",
+    "huesped_id": "HUESP012",
+    "habitacion_id": "HAB012",
+    "fecha_ingreso": "2026-03-26",
+    "fecha_salida": "2026-03-29",
+    "estado": "pendiente"
+  }
+]);

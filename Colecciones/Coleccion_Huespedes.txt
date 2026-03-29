@@ -1,0 +1,101 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('huespedes').insertMany([
+{
+    "_id": "HUESP001",
+    "nombre": "Carlos Martínez",
+    "documento": "MX12345678",
+    "correo": "carlos.martinez@email.com",
+    "telefono": "+52 5512345678",
+    "pais_origen": "México"
+  },
+  {
+    "_id": "HUESP002",
+    "nombre": "Laura Gómez",
+    "documento": "CO98765432",
+    "correo": "laura.gomez@email.com",
+    "telefono": "+57 3001234567",
+    "pais_origen": "Colombia"
+  },
+  {
+    "_id": "HUESP003",
+    "nombre": "Andrés Fernández",
+    "documento": "AR45678901",
+    "correo": "andres.fernandez@email.com",
+    "telefono": "+54 91123456789",
+    "pais_origen": "Argentina"
+  },
+  {
+    "_id": "HUESP004",
+    "nombre": "Sofía Herrera",
+    "documento": "ES11223344",
+    "correo": "sofia.herrera@email.com",
+    "telefono": "+34 612345678",
+    "pais_origen": "España"
+  },
+  {
+    "_id": "HUESP005",
+    "nombre": "Daniel Oliveira",
+    "documento": "BR55667788",
+    "correo": "daniel.oliveira@email.com",
+    "telefono": "+55 11987654321",
+    "pais_origen": "Brasil"
+  },
+  {
+    "_id": "HUESP006",
+    "nombre": "María López",
+    "documento": "CR22334455",
+    "correo": "maria.lopez@email.com",
+    "telefono": "+506 88887777",
+    "pais_origen": "Costa Rica"
+  },
+  {
+    "_id": "HUESP007",
+    "nombre": "Juan Rodríguez",
+    "documento": "CL77889900",
+    "correo": "juan.rodriguez@email.com",
+    "telefono": "+56 912345678",
+    "pais_origen": "Chile"
+  },
+  {
+    "_id": "HUESP008",
+    "nombre": "Lucía Torres",
+    "documento": "UY11224455",
+    "correo": "lucia.torres@email.com",
+    "telefono": "+598 99123456",
+    "pais_origen": "Uruguay"
+  },
+  {
+    "_id": "HUESP009",
+    "nombre": "Pedro Ramírez",
+    "documento": "EC66778899",
+    "correo": "pedro.ramirez@email.com",
+    "telefono": "+593 987654321",
+    "pais_origen": "Ecuador"
+  },
+  {
+    "_id": "HUESP010",
+    "nombre": "Ana Castro",
+    "documento": "CR99887766",
+    "correo": "ana.castro@email.com",
+    "telefono": "+506 88994455",
+    "pais_origen": "Costa Rica"
+  },
+  {
+    "_id": "HUESP011",
+    "nombre": "Luis Mendoza",
+    "documento": "GT44556677",
+    "correo": "luis.mendoza@email.com",
+    "telefono": "+502 55556666",
+    "pais_origen": "Guatemala"
+  },
+  {
+    "_id": "HUESP012",
+    "nombre": "Valentina Rojas",
+    "documento": "VE33445566",
+    "correo": "valentina.rojas@email.com",
+    "telefono": "+58 4123456789",
+    "pais_origen": "Venezuela"
+  }
+]);

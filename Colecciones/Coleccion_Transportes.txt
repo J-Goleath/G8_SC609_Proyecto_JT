@@ -1,0 +1,89 @@
+use('HotelDB');
+
+// Create a new document in the collection.
+db.getCollection('transportes').insertMany([
+  {
+    "_id": "TRANS001",
+    "tipo": "Van",
+    "capacidad": 12,
+    "disponible": true,
+    "conductor": "Carlos Pérez"
+  },
+  {
+    "_id": "TRANS002",
+    "tipo": "Bus",
+    "capacidad": 40,
+    "disponible": true,
+    "conductor": "Luis Gómez"
+  },
+  {
+    "_id": "TRANS003",
+    "tipo": "Automóvil",
+    "capacidad": 4,
+    "disponible": false,
+    "conductor": "Ana Rodríguez"
+  },
+  {
+    "_id": "TRANS004",
+    "tipo": "Microbús",
+    "capacidad": 20,
+    "disponible": true,
+    "conductor": "José Martínez"
+  },
+  {
+    "_id": "TRANS005",
+    "tipo": "Van",
+    "capacidad": 15,
+    "disponible": true,
+    "conductor": "María López"
+  },
+  {
+    "_id": "TRANS006",
+    "tipo": "Automóvil",
+    "capacidad": 5,
+    "disponible": true,
+    "conductor": "Pedro Ramírez"
+  },
+  {
+    "_id": "TRANS007",
+    "tipo": "Bus",
+    "capacidad": 45,
+    "disponible": false,
+    "conductor": "Jorge Castillo"
+  },
+  {
+    "_id": "TRANS008",
+    "tipo": "Microbús",
+    "capacidad": 18,
+    "disponible": true,
+    "conductor": "Sofía Herrera"
+  },
+  {
+    "_id": "TRANS009",
+    "tipo": "Van",
+    "capacidad": 10,
+    "disponible": true,
+    "conductor": "Daniel Vargas"
+  },
+  {
+    "_id": "TRANS010",
+    "tipo": "Automóvil",
+    "capacidad": 4,
+    "disponible": true,
+    "conductor": "Valeria Castro"
+  },
+  {
+    "_id": "TRANS011",
+    "tipo": "Bus",
+    "capacidad": 50,
+    "disponible": true,
+    "conductor": "Miguel Torres"
+  },
+  {
+    "_id": "TRANS012",
+    "tipo": "Microbús",
+    "capacidad": 22,
+    "disponible": false,
+    "conductor": "Fernanda Rojas"
+  }
+]);
