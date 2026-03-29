@@ -1,0 +1,20 @@
+//Creación de la base de datos y sus 12 colecciones
+const database = 'HotelDB';
+
+// Create a new database.
+use(database);
+
+// Create a new collection.
+db.createCollection("huespedes");
+db.createCollection("habitaciones");
+db.createCollection("reservas");
+db.createCollection("pagos");
+db.createCollection("servicios");
+db.createCollection("empleados");
+db.createCollection("promociones");
+db.createCollection("sedes");
+db.createCollection("eventos");
+db.createCollection("transportes");
+db.createCollection("proveedores");
+db.createCollection("mantenimiento");
+
