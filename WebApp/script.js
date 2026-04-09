@@ -79,7 +79,7 @@ function cargarParaEditar(id, nombre, doc, correo, tel, pais) {
   $("#pais_origen").val(pais);
 
   $("#metodo_actual").val("PUT");
-  $("#titulo_formulario").text("Editando Huésped");
+  $("#titulo_formulario").text("Editando Huesped");
   $("#btn_guardar")
     .text("Actualizar Cambios")
     .removeClass("btn-success")
@@ -91,7 +91,7 @@ function cancelarEdicion() {
   $("#form_huesped")[0].reset();
   $("#_id").prop("readonly", false);
   $("#metodo_actual").val("POST");
-  $("#titulo_formulario").text("Registro de Huésped");
+  $("#titulo_formulario").text("Registro de Huesped");
   $("#btn_guardar")
     .text("Guardar Registro")
     .removeClass("btn-warning")
@@ -100,7 +100,7 @@ function cancelarEdicion() {
 }
 
 function eliminarHuesped(id) {
-  if (confirm("¿Seguro que desea eliminar este registro?")) {
+  if (confirm("¿Desea eliminar el registro?")) {
     $.ajax({
       url: `${API_URL}/${id}`,
       type: "DELETE",
