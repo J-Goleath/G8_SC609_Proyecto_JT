@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagos</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+      <div class="container">
+        <span class="navbar-brand">Sistema de Pagos</span>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+
+        <!-- FORM -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow border-0">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0" id="titulo_formulario">Registro de Pago</h5>
+            </div>
+
+            <div class="card-body">
+              <form id="form_pago">
+                <input type="hidden" id="metodo_actual" value="POST" />
+
+                <div class="mb-3">
+                  <label>ID:</label>
+                  <input type="text" id="_id" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label>Reserva ID:</label>
+                  <input type="text" id="reserva_id" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label>Monto:</label>
+                  <input type="number" id="monto" class="form-control" required />
+                </div>
+
+                <!-- METODO -->
+                <div class="mb-3">
+                  <label>Método:</label>
+                  <select id="metodo" class="form-control" required>
+                    <option value="">Seleccione</option>
+                    <option>Tarjeta de crédito</option>
+                    <option>Tarjeta de débito</option>
+                    <option>Transferencia bancaria</option>
+                    <option>Efectivo</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label>Fecha:</label>
+                  <input type="date" id="fecha" class="form-control" required />
+                </div>
+
+                <!-- ESTADO -->
+                <div class="mb-3">
+                  <label>Estado:</label>
+                  <select id="estado" class="form-control" required>
+                    <option value="">Seleccione</option>
+                    <option value="aprobado">Aprobado</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="reembolsado">Reembolsado</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100" id="btn_guardar">
+                  Guardar Registro
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary w-100 mt-2 d-none"
+                  id="btn_cancelar"
+                >
+                  Cancelar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLA -->
+        <div class="col-md-8">
+          <div class="card shadow border-0">
+            <div class="card-header bg-dark text-white">
+              <h5 class="mb-0">Pagos registrados</h5>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>ID</th>
+                    <th>Reserva</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla_pagos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

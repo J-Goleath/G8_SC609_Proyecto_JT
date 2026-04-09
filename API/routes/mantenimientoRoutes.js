@@ -21,9 +21,11 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     res.json(
-      await Mantenimiento.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      }),
+      await Mantenimiento.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+        { new: true }
+      )
     );
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -32,7 +34,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    await Mantenimiento.findByIdAndDelete(req.params.id);
+    await Mantenimiento.findOneAndDelete({ _id: req.params.id });
     res.json({ message: "Eliminado" });
   } catch (err) {
     res.status(500).json({ error: err.message });
