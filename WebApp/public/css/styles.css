@@ -1,0 +1,111 @@
+:root {
+    --sidebar-width: 260px;
+    --fidelitas-gold: #b2945e;
+    --fidelitas-yellow: #ffc107;
+    --dark-bg: #1a1d20;
+    --light-bg: #f4f7f6;
+    --transition-speed: 0.3s;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    background-color: var(--light-bg);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+#sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--dark-bg);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+#sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px 20px;
+    margin: 4px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+#sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#sidebar .nav-link.active {
+    background: var(--fidelitas-yellow);
+    color: #000 !important;
+    font-weight: 600;
+}
+
+#sidebar .nav-link i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+
+.main-wrapper {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: white !important;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e3e6f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#content {
+    padding: 40px;
+    flex: 1 0 auto;
+}
+
+footer {
+    background: white;
+    border-top: 1px solid #e3e6f0;
+    padding: 20px 40px;
+}
+
+
+.module-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    transition: all 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    #sidebar { left: calc(-1 * var(--sidebar-width)); }
+    .main-wrapper { margin-left: 0; }
+    #sidebar.active { left: 0; }
+}
