@@ -149,106 +149,79 @@
         </header>
 //Modificar a partir de aqui para mantener estandar visual
         <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card shadow border-0">
-              <div class="card-header bg-primary text-white py-3">
-                <h5 class="mb-0" id="titulo_formulario">Registro de Huésped</h5>
-              </div>
-              <div class="card-body p-4">
-                <form id="form_huesped">
-                  <input type="hidden" id="metodo_actual" value="POST" />
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">ID:</label>
-                    <input type="text" id="_id" class="form-control" required />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">Nombre:</label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">Cédula:</label>
-                    <input
-                      type="text"
-                      id="documento"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">Correo:</label>
-                    <input
-                      type="email"
-                      id="correo"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">Teléfono:</label>
-                    <input
-                      type="text"
-                      id="telefono"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label small fw-bold">País:</label>
-                    <input
-                      type="text"
-                      id="pais_origen"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-success w-100 shadow-sm"
-                    id="btn_guardar"
-                  >
-                    <i class="bi bi-save me-2"></i>Guardar Registro
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary w-100 mt-2 d-none shadow-sm"
-                    id="btn_cancelar"
-                  >
-                    Cancelar
-                  </button>
-                </form>
-              </div>
-            </div>
+  <div class="col-md-4 mb-4">
+    <div class="card shadow border-0">
+      <div class="card-header bg-primary text-white py-3">
+        <h5 class="mb-0" id="titulo_formulario">Registro de Transporte</h5>
+      </div>
+      <div class="card-body p-4">
+        <form id="form_transporte">
+          <input type="hidden" id="metodo_actual" value="POST" />
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">ID:</label>
+            <input type="text" id="_id" class="form-control" required />
           </div>
 
-          <div class="col-md-8">
-            <div class="card shadow border-0">
-              <div class="card-header bg-dark text-white py-3">
-                <h5 class="mb-0">Huéspedes ya registrados</h5>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle">
-                    <thead class="table-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>País</th>
-                        <th class="text-center">Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tabla_huespedes"></tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Tipo:</label>
+            <input type="text" id="tipo" class="form-control" required />
           </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Capacidad:</label>
+            <input type="number" id="capacidad" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Disponible:</label>
+            <select id="disponible" class="form-control">
+              <option value="true">Sí</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Conductor:</label>
+            <input type="text" id="conductor" class="form-control" required />
+          </div>
+
+          <button type="submit" class="btn btn-success w-100 shadow-sm" id="btn_guardar">
+            <i class="bi bi-save me-2"></i>Guardar Registro
+          </button>
+
+          <button type="button" class="btn btn-secondary w-100 mt-2 d-none shadow-sm" id="btn_cancelar">
+            Cancelar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card shadow border-0">
+      <div class="card-header bg-dark text-white py-3">
+        <h5 class="mb-0">Transportes registrados</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Capacidad</th>
+                <th>Disponible</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla_transportes"></tbody>
+          </table>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 //hasta aqui para mantener estandar visual.
       <footer class="bg-white border-top py-4 mt-auto">
         <div class="container">
