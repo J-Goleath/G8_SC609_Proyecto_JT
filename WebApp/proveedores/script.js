@@ -1,9 +1,9 @@
-const API_URL = "http://localhost:3000/api/huespedes";
+const API_URL = "http://localhost:3000/api/proveedores";
 
 $(document).ready(function () {
   obtenerHuespedes();
 
-  $("#form_huesped").on("submit", function (e) {
+  $("#form_proveedor").on("submit", function (e) {
     e.preventDefault();
 
     const metodo = $("#metodo_actual").val();
@@ -12,10 +12,9 @@ $(document).ready(function () {
     const datos = {
       _id: id,
       nombre: $("#nombre").val(),
-      documento: $("#documento").val(),
-      correo: $("#correo").val(),
+      servicio: $("#servicio").val(),
       telefono: $("#telefono").val(),
-      pais_origen: $("#pais_origen").val(),
+      correo: $("#correo").val(),
     };
 
     const urlFinal = metodo === "PUT" ? `${API_URL}/${id}` : API_URL;
@@ -46,22 +45,24 @@ $(document).ready(function () {
   });
 });
 
-function obtenerHuespedes() {
+function obtenerProveedores() {
   $.ajax({
     url: API_URL,
     type: "GET",
     dataType: "json",
     success: function (res) {
-      const tabla = $("#tabla_huespedes");
+      const tabla = $("#tabla_proveedores");
       tabla.empty();
       res.forEach((h) => {
         tabla.append(`
                     <tr>
                         <td>${h._id}</td>
                         <td>${h.nombre}</td>
-                        <td>${h.pais_origen}</td>
+                        <td>${h.servicio}</td>
+                        <td>${h.telefono}</td>
+                        <td>${h.correo}</td>
                         <td>
-                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.nombre}', '${h.documento}', '${h.correo}', '${h.telefono}', '${h.pais_origen}')">Editar</button>
+                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.nombre}', '${h.servicio}', '${h.telefono}', '${h.correo}')">Editar</button>
                             <button class="btn btn-sm btn-danger" onclick="eliminarHuesped('${h._id}')">Eliminar</button>
                         </td>
                     </tr>`);
@@ -70,16 +71,16 @@ function obtenerHuespedes() {
   });
 }
 
-function cargarParaEditar(id, nombre, doc, correo, tel, pais) {
+function cargarParaEditar(id, nombre, serv, tel, correo) {
   $("#_id").val(id).prop("readonly", true);
   $("#nombre").val(nombre);
-  $("#documento").val(doc);
-  $("#correo").val(correo);
+  $("#servicio").val(serv);
   $("#telefono").val(tel);
-  $("#pais_origen").val(pais);
+  $("#correo").val(correo);
+  
 
   $("#metodo_actual").val("PUT");
-  $("#titulo_formulario").text("Editando Huesped");
+  $("#titulo_formulario").text("Editando Proveedor");
   $("#btn_guardar")
     .text("Actualizar Cambios")
     .removeClass("btn-success")
@@ -88,10 +89,10 @@ function cargarParaEditar(id, nombre, doc, correo, tel, pais) {
 }
 
 function cancelarEdicion() {
-  $("#form_huesped")[0].reset();
+  $("#form_proveedor")[0].reset();
   $("#_id").prop("readonly", false);
   $("#metodo_actual").val("POST");
-  $("#titulo_formulario").text("Registro de Huesped");
+  $("#titulo_formulario").text("Registro de Proveedor");
   $("#btn_guardar")
     .text("Guardar Registro")
     .removeClass("btn-warning")
@@ -99,13 +100,13 @@ function cancelarEdicion() {
   $("#btn_cancelar").addClass("d-none");
 }
 
-function eliminarHuesped(id) {
+function eliminarProveedores(id) {
   if (confirm("¿Desea eliminar el registro?")) {
     $.ajax({
       url: `${API_URL}/${id}`,
       type: "DELETE",
       success: function () {
-        obtenerHuespedes();
+        obtenerProveedores();
       },
     });
   }
