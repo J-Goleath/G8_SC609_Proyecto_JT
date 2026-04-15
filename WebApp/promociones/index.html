@@ -143,7 +143,7 @@
 
       <div id="content-page" class="container">
         <header class="mb-4">
-          <h2 class="fw-bold">Gestion de Huespedes</h2>
+          <h2 class="fw-bold">Gestion de Promociones</h2>
 
         </header>
 //Modificar a partir de aqui para mantener estandar visual
@@ -151,10 +151,10 @@
           <div class="col-md-4 mb-4">
             <div class="card shadow border-0">
               <div class="card-header bg-primary text-white py-3">
-                <h5 class="mb-0" id="titulo_formulario">Registro de Huesped</h5>
+                <h5 class="mb-0" id="titulo_formulario">Registro de Promociones</h5>
               </div>
               <div class="card-body p-4">
-                <form id="form_huesped">
+                <form id="form_promociones">
                   <input type="hidden" id="metodo_actual" value="POST" />
                   <div class="mb-3">
                     <label class="form-label small fw-bold">ID:</label>
@@ -170,37 +170,37 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Cedula:</label>
+                    <label class="form-label small fw-bold">Descripcion:</label>
                     <input
                       type="text"
-                      id="documento"
+                      id="descripcion"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Correo:</label>
+                    <label class="form-label small fw-bold">Descuento:</label>
                     <input
-                      type="email"
-                      id="correo"
+                      type="number"
+                      id="porcetaje_descuento"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Telefono:</label>
+                    <label class="form-label small fw-bold">Inicia:</label>
                     <input
-                      type="text"
-                      id="telefono"
+                      type="date"
+                      id="fecha_inicio"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Pais:</label>
+                    <label class="form-label small fw-bold">Termina :</label>
                     <input
-                      type="text"
-                      id="pais_origen"
+                      type="date"
+                      id="fecha_fin"
                       class="form-control"
                       required
                     />
@@ -210,7 +210,7 @@
                     class="btn btn-success w-100 shadow-sm"
                     id="btn_guardar"
                   >
-                    <i class="bi bi-save me-2"></i>Guardar Registro
+                    <i class="bi bi-save me-2"></i>Guardar Promocion
                   </button>
                   <button
                     type="button"
@@ -227,7 +227,7 @@
           <div class="col-md-8">
             <div class="card shadow border-0">
               <div class="card-header bg-dark text-white py-3">
-                <h5 class="mb-0">Huespedes ya registrados</h5>
+                <h5 class="mb-0">Promocion ya registrada</h5>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -236,7 +236,10 @@
                       <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>País</th>
+                        <th>Descripcion</th>
+                        <th>Descuento</th>
+                        <th>Inicia</th>
+                        <th>Termina</th>
                         <th class="text-center">Acciones</th>
                       </tr>
                     </thead>
