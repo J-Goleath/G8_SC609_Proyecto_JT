@@ -1,9 +1,9 @@
 const API_URL = "http://localhost:3000/api/huespedes";
 
 $(document).ready(function () {
-  obtenerHuespedes();
+  obtenerReservas();
 
-  $("#form_huesped").on("submit", function (e) {
+  $("#form_reserva").on("submit", function (e) {
     e.preventDefault();
 
     const metodo = $("#metodo_actual").val();
@@ -11,11 +11,11 @@ $(document).ready(function () {
 
     const datos = {
       _id: id,
-      nombre: $("#nombre").val(),
-      documento: $("#documento").val(),
-      correo: $("#correo").val(),
-      telefono: $("#telefono").val(),
-      pais_origen: $("#pais_origen").val(),
+      nombre: $("#huesped_id").val(),
+      documento: $("#habitacion_id").val(),
+      correo: $("#fecha_ingreso").val(),
+      telefono: $("#fecha_salida").val(),
+      pais_origen: $("#estado").val(),
     };
 
     const urlFinal = metodo === "PUT" ? `${API_URL}/${id}` : API_URL;
@@ -46,22 +46,25 @@ $(document).ready(function () {
   });
 });
 
-function obtenerHuespedes() {
+function obtenerReservas() {
   $.ajax({
     url: API_URL,
     type: "GET",
     dataType: "json",
     success: function (res) {
-      const tabla = $("#tabla_huespedes");
+      const tabla = $("#tabla_reserva");
       tabla.empty();
       res.forEach((h) => {
         tabla.append(`
                     <tr>
                         <td>${h._id}</td>
-                        <td>${h.nombre}</td>
-                        <td>${h.pais_origen}</td>
+                        <td>${h.huesped_id}</td>
+                        <td>${h.habitacion_id}</td>
+                        <td>${h.fecha_ingreso}</td>
+                        <td>${h.fecha_salida}</td>
+                        <td>${h.estado}</td>
                         <td>
-                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.nombre}', '${h.documento}', '${h.correo}', '${h.telefono}', '${h.pais_origen}')">Editar</button>
+                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.huesped_id}', '${h.habitacion_id}', '${h.fecha_ingreso}', '${h.fecha_salida}', '${h.estado}')">Editar</button>
                             <button class="btn btn-sm btn-danger" onclick="eliminarHuesped('${h._id}')">Eliminar</button>
                         </td>
                     </tr>`);
@@ -70,16 +73,16 @@ function obtenerHuespedes() {
   });
 }
 
-function cargarParaEditar(id, nombre, doc, correo, tel, pais) {
+function cargarParaEditar(id, huesped, habitacion, ingreso, salida, estado) {
   $("#_id").val(id).prop("readonly", true);
-  $("#nombre").val(nombre);
-  $("#documento").val(doc);
-  $("#correo").val(correo);
-  $("#telefono").val(tel);
-  $("#pais_origen").val(pais);
+  $("#huesped_id").val(huesped);
+  $("#habitacion_id").val(habitacion);
+  $("#fecha_ingreso").val(ingreso);
+  $("#fecha_salida").val(salida);
+  $("#estado").val(estado);
 
   $("#metodo_actual").val("PUT");
-  $("#titulo_formulario").text("Editando Huesped");
+  $("#titulo_formulario").text("Editando Reserva");
   $("#btn_guardar")
     .text("Actualizar Cambios")
     .removeClass("btn-success")
@@ -88,10 +91,10 @@ function cargarParaEditar(id, nombre, doc, correo, tel, pais) {
 }
 
 function cancelarEdicion() {
-  $("#form_huesped")[0].reset();
+  $("#form_reserva")[0].reset();
   $("#_id").prop("readonly", false);
   $("#metodo_actual").val("POST");
-  $("#titulo_formulario").text("Registro de Huesped");
+  $("#titulo_formulario").text("Registro de Reserva");
   $("#btn_guardar")
     .text("Guardar Registro")
     .removeClass("btn-warning")
@@ -99,7 +102,7 @@ function cancelarEdicion() {
   $("#btn_cancelar").addClass("d-none");
 }
 
-function eliminarHuesped(id) {
+function eliminarReserva(id) {
   if (confirm("¿Desea eliminar el registro?")) {
     $.ajax({
       url: `${API_URL}/${id}`,

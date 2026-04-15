@@ -144,7 +144,7 @@
 
       <div id="content-page" class="container">
         <header class="mb-4">
-          <h2 class="fw-bold">Gestion de Huespedes</h2>
+          <h2 class="fw-bold">Gestion de Reservas</h2>
 
         </header> // Modificar a partir de aqui para mantener estandar visual
 
@@ -152,59 +152,59 @@
           <div class="col-md-4 mb-4">
             <div class="card shadow border-0">
               <div class="card-header bg-primary text-white py-3">
-                <h5 class="mb-0" id="titulo_formulario">Registro de Huesped</h5>
+                <h5 class="mb-0" id="titulo_formulario">Registro de Reservas</h5>
               </div>
               <div class="card-body p-4">
-                <form id="form_huesped">
+                <form id="form_reserva">
                   <input type="hidden" id="metodo_actual" value="POST" />
                   <div class="mb-3">
                     <label class="form-label small fw-bold">ID:</label>
                     <input type="text" id="_id" class="form-control" required />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Nombre:</label>
+                    <label class="form-label small fw-bold">Huesped_id:</label>
                     <input
                       type="text"
-                      id="nombre"
+                      id="huesped_id"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Cedula:</label>
+                    <label class="form-label small fw-bold">Habitacion_id:</label>
                     <input
                       type="text"
-                      id="documento"
+                      id="habitacion_id"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Correo:</label>
+                    <label class="form-label small fw-bold">Fecha_ingreso:</label>
                     <input
                       type="email"
-                      id="correo"
+                      id="fecha_ingreso"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Teléfono:</label>
+                    <label class="form-label small fw-bold">Fecha_salida:</label>
                     <input
                       type="text"
-                      id="telefono"
+                      id="fecha_salida"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Pais:</label>
-                    <input
-                      type="text"
-                      id="pais_origen"
-                      class="form-control"
-                      required
-                    />
+                    <label class="form-label small fw-bold">Estado:</label>
+                    <select id="estado" class="form-select">
+                      <option value="finalizada">Finalizada</option>
+                      <option value="confirmada">Confirmada</option>
+                      <option value="pendiente">Pendiente</option>
+                      <option value="cancelada">Cancelada</option>
+                    </select>
                   </div>
                   <button
                     type="submit"
@@ -228,7 +228,7 @@
           <div class="col-md-8">
             <div class="card shadow border-0">
               <div class="card-header bg-dark text-white py-3">
-                <h5 class="mb-0">Huéspedes ya registrados</h5>
+                <h5 class="mb-0">Reserva ya registrada</h5>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -236,12 +236,15 @@
                     <thead class="table-light">
                       <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>País</th>
+                        <th>Huesped_id</th>
+                        <th>Habitacion_id</th>
+                        <th>Fecha_ingreso</th>
+                        <th>Fecha_salida</th>
+                        <th>Estado</th>
                         <th class="text-center">Acciones</th>
                       </tr>
                     </thead>
-                    <tbody id="tabla_huespedes"></tbody>
+                    <tbody id="tabla_reserva"></tbody>
                   </table>
                 </div>
               </div>
