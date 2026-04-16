@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HotelDB</title>
+    <title>HotelDB | Gestión de Reservas</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -71,12 +71,12 @@
                 <ul class="dropdown-menu shadow border-0">
                   <li><h6 class="dropdown-header">Operaciones</h6></li>
                   <li>
-                    <a class="dropdown-item active" href="../reservas/index.html"
+                    <a class="dropdown-item active" href="index.html"
                       >Reservas</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="index.html"
+                    <a class="dropdown-item" href="../huespedes/index.html"
                       >Huespedes</a
                     >
                   </li>
@@ -137,7 +137,6 @@
                 </ul>
               </li>
             </ul>
-
           </div>
         </div>
       </nav>
@@ -145,14 +144,15 @@
       <div id="content-page" class="container">
         <header class="mb-4">
           <h2 class="fw-bold">Gestion de Reservas</h2>
-
-        </header> // Modificar a partir de aqui para mantener estandar visual
+        </header>
 
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="card shadow border-0">
               <div class="card-header bg-primary text-white py-3">
-                <h5 class="mb-0" id="titulo_formulario">Registro de Reservas</h5>
+                <h5 class="mb-0" id="titulo_formulario">
+                  Registro de Reservas
+                </h5>
               </div>
               <div class="card-body p-4">
                 <form id="form_reserva">
@@ -171,7 +171,9 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Habitacion_id:</label>
+                    <label class="form-label small fw-bold"
+                      >Habitacion_id:</label
+                    >
                     <input
                       type="text"
                       id="habitacion_id"
@@ -180,18 +182,22 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Fecha_ingreso:</label>
+                    <label class="form-label small fw-bold"
+                      >Fecha_ingreso:</label
+                    >
                     <input
-                      type="email"
+                      type="date"
                       id="fecha_ingreso"
                       class="form-control"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label small fw-bold">Fecha_salida:</label>
+                    <label class="form-label small fw-bold"
+                      >Fecha_salida:</label
+                    >
                     <input
-                      type="text"
+                      type="date"
                       id="fecha_salida"
                       class="form-control"
                       required
@@ -252,16 +258,14 @@
           </div>
         </div>
       </div>
-// Hasta aqui para mantener estandar visual.
+
       <footer class="bg-white border-top py-4 mt-auto">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 text-muted small text-center text-md-start">
               &copy; 2026 <strong>Proyecto Final</strong>
             </div>
-            <div
-              class="col-md-6 text-md-end text-muted small text-center text-md-end"
-            >
+            <div class="col-md-6 text-md-end text-muted small text-center">
               Grupo: <span class="fw-bold text-dark">8</span>.
             </div>
           </div>

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/huespedes";
+const API_URL = "http://localhost:3000/api/reservas";
 
 $(document).ready(function () {
   obtenerReservas();
@@ -11,11 +11,11 @@ $(document).ready(function () {
 
     const datos = {
       _id: id,
-      nombre: $("#huesped_id").val(),
-      documento: $("#habitacion_id").val(),
-      correo: $("#fecha_ingreso").val(),
-      telefono: $("#fecha_salida").val(),
-      pais_origen: $("#estado").val(),
+      huesped_id: $("#huesped_id").val(),
+      habitacion_id: $("#habitacion_id").val(),
+      fecha_ingreso: $("#fecha_ingreso").val(),
+      fecha_salida: $("#fecha_salida").val(),
+      estado: $("#estado").val(),
     };
 
     const urlFinal = metodo === "PUT" ? `${API_URL}/${id}` : API_URL;
@@ -28,14 +28,13 @@ $(document).ready(function () {
       success: function () {
         alert("Operación exitosa");
         cancelarEdicion();
-        obtenerHuespedes();
+        obtenerReservas();
       },
       error: function (err) {
         const detalleError =
           err.responseJSON && err.responseJSON.error
             ? err.responseJSON.error
             : err.statusText;
-        console.error("Detalle del error:", err.responseJSON);
         alert("Error al procesar: " + detalleError);
       },
     });
@@ -62,10 +61,14 @@ function obtenerReservas() {
                         <td>${h.habitacion_id}</td>
                         <td>${h.fecha_ingreso}</td>
                         <td>${h.fecha_salida}</td>
-                        <td>${h.estado}</td>
-                        <td>
-                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.huesped_id}', '${h.habitacion_id}', '${h.fecha_ingreso}', '${h.fecha_salida}', '${h.estado}')">Editar</button>
-                            <button class="btn btn-sm btn-danger" onclick="eliminarHuesped('${h._id}')">Eliminar</button>
+                        <td><span class="badge ${h.estado === "cancelada" ? "bg-danger" : "bg-success"}">${h.estado}</span></td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-warning me-1" onclick="cargarParaEditar('${h._id}', '${h.huesped_id}', '${h.habitacion_id}', '${h.fecha_ingreso}', '${h.fecha_salida}', '${h.estado}')">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="eliminarReserva('${h._id}')">
+                                <i class="bi bi-trash"></i>
+                            </button>
                         </td>
                     </tr>`);
       });
@@ -84,7 +87,7 @@ function cargarParaEditar(id, huesped, habitacion, ingreso, salida, estado) {
   $("#metodo_actual").val("PUT");
   $("#titulo_formulario").text("Editando Reserva");
   $("#btn_guardar")
-    .text("Actualizar Cambios")
+    .html('<i class="bi bi-arrow-clockwise me-2"></i>Actualizar Cambios')
     .removeClass("btn-success")
     .addClass("btn-warning");
   $("#btn_cancelar").removeClass("d-none");
@@ -96,19 +99,22 @@ function cancelarEdicion() {
   $("#metodo_actual").val("POST");
   $("#titulo_formulario").text("Registro de Reserva");
   $("#btn_guardar")
-    .text("Guardar Registro")
+    .html('<i class="bi bi-save me-2"></i>Guardar Registro')
     .removeClass("btn-warning")
     .addClass("btn-success");
   $("#btn_cancelar").addClass("d-none");
 }
 
 function eliminarReserva(id) {
-  if (confirm("¿Desea eliminar el registro?")) {
+  if (confirm("¿Desea eliminar esta reserva?")) {
     $.ajax({
       url: `${API_URL}/${id}`,
       type: "DELETE",
       success: function () {
-        obtenerHuespedes();
+        obtenerReservas();
+      },
+      error: function (err) {
+        alert("Error al eliminar: " + err.statusText);
       },
     });
   }

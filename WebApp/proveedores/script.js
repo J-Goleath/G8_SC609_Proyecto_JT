@@ -1,7 +1,7 @@
 const API_URL = "http://localhost:3000/api/proveedores";
 
 $(document).ready(function () {
-  obtenerHuespedes();
+  obtenerProveedores();
 
   $("#form_proveedor").on("submit", function (e) {
     e.preventDefault();
@@ -27,14 +27,13 @@ $(document).ready(function () {
       success: function () {
         alert("Operación exitosa");
         cancelarEdicion();
-        obtenerHuespedes();
+        obtenerProveedores();
       },
       error: function (err) {
         const detalleError =
           err.responseJSON && err.responseJSON.error
             ? err.responseJSON.error
             : err.statusText;
-        console.error("Detalle del error:", err.responseJSON);
         alert("Error al procesar: " + detalleError);
       },
     });
@@ -53,17 +52,21 @@ function obtenerProveedores() {
     success: function (res) {
       const tabla = $("#tabla_proveedores");
       tabla.empty();
-      res.forEach((h) => {
+      res.forEach((p) => {
         tabla.append(`
                     <tr>
-                        <td>${h._id}</td>
-                        <td>${h.nombre}</td>
-                        <td>${h.servicio}</td>
-                        <td>${h.telefono}</td>
-                        <td>${h.correo}</td>
-                        <td>
-                            <button class="btn btn-sm btn-warning" onclick="cargarParaEditar('${h._id}', '${h.nombre}', '${h.servicio}', '${h.telefono}', '${h.correo}')">Editar</button>
-                            <button class="btn btn-sm btn-danger" onclick="eliminarHuesped('${h._id}')">Eliminar</button>
+                        <td>${p._id}</td>
+                        <td>${p.nombre}</td>
+                        <td>${p.servicio}</td>
+                        <td>${p.telefono}</td>
+                        <td>${p.correo}</td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-warning me-1" onclick="cargarParaEditar('${p._id}', '${p.nombre}', '${p.servicio}', '${p.telefono}', '${p.correo}')">
+                                <i class="bi bi-pencil"></i> Editar
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="eliminarProveedor('${p._id}')">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
                         </td>
                     </tr>`);
       });
@@ -77,12 +80,11 @@ function cargarParaEditar(id, nombre, serv, tel, correo) {
   $("#servicio").val(serv);
   $("#telefono").val(tel);
   $("#correo").val(correo);
-  
 
   $("#metodo_actual").val("PUT");
   $("#titulo_formulario").text("Editando Proveedor");
   $("#btn_guardar")
-    .text("Actualizar Cambios")
+    .html('<i class="bi bi-arrow-clockwise me-2"></i>Actualizar Cambios')
     .removeClass("btn-success")
     .addClass("btn-warning");
   $("#btn_cancelar").removeClass("d-none");
@@ -92,21 +94,25 @@ function cancelarEdicion() {
   $("#form_proveedor")[0].reset();
   $("#_id").prop("readonly", false);
   $("#metodo_actual").val("POST");
-  $("#titulo_formulario").text("Registro de Proveedor");
+  $("#titulo_formulario").text("Registro de Proveedores");
   $("#btn_guardar")
-    .text("Guardar Registro")
+    .html('<i class="bi bi-save me-2"></i>Guardar Registro')
     .removeClass("btn-warning")
     .addClass("btn-success");
   $("#btn_cancelar").addClass("d-none");
 }
 
-function eliminarProveedores(id) {
-  if (confirm("¿Desea eliminar el registro?")) {
+function eliminarProveedor(id) {
+  if (confirm("¿Está seguro de que desea eliminar este proveedor?")) {
     $.ajax({
       url: `${API_URL}/${id}`,
       type: "DELETE",
       success: function () {
+        alert("Proveedor eliminado");
         obtenerProveedores();
+      },
+      error: function (err) {
+        alert("Error al eliminar: " + err.statusText);
       },
     });
   }
